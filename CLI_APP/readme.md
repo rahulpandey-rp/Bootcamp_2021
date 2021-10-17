@@ -118,7 +118,7 @@ Run the script by giving any command below:
 ```
 #### Listing data with Date filter
 
-###### List all task created from specific date to last
+##### List all task created from specific date to last
 ```
 python  <path to file> --list --start 2021-09-13
  ```
@@ -142,7 +142,7 @@ python  <path to file> --list --start 2021-09-13
 |   28 | Start course on django       | 2021-09-23 15:56:36 | False        |
 +------+------------------------------+---------------------+--------------+
 ```
-###### List all task created upto specific date from start
+##### List all task created upto specific date from start
 ``` 
 python  <path to file> --list --end 2021-09-18
 ```
@@ -162,7 +162,7 @@ python  <path to file> --list --end 2021-09-18
 +------+-----------------------------+---------------------+--------------+
 ```
 
-###### List all task created between between two dates
+##### List all task created between between two dates
 ```
 python  <path to file> --list --start 2021-09-14 --end 2021-09-18
 ```
