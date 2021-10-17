@@ -39,10 +39,12 @@ class TodoManager:
 
     def list_complete(self):
         result = self.sess.query(TestTask).where(TestTask.status == 1)
+        print("Task with Status incomplete")
         TodoManager.print_table(result)
 
     def list_incomplete(self):
         result = self.sess.query(TestTask).where(TestTask.status == 0)
+        print("Task with Status incomplete")
         TodoManager.print_table(result)
 
     def list_start_end(self, start, end):
@@ -159,10 +161,11 @@ class TodoManager:
                         item.id,
                         item.title,
                         item.created_at,
+                        item.status,
                     )
                     for item in result
                 ],
-                headers=["Id", "Title", "Created_at"],
+                headers=["Id", "Title", "Created_at", "Iscomplete"],
                 tablefmt="psql",
             )
         )
@@ -264,3 +267,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
