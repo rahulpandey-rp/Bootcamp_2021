@@ -94,7 +94,7 @@ Run the script by giving any command below:
 ```
 #### Listing all data 
 
-``` python  <path to file> -- list ```
+``` python  <path to file> --list ```
 * Output - 
 ```
 +------+------------------------------+---------------------+--------------+
@@ -120,7 +120,7 @@ Run the script by giving any command below:
 
 ###### List all task created from specific date to last
 ```
-python  <path to file> -- list --start 2021-09-13
+python  <path to file> --list --start 2021-09-13
  ```
  
 * Output
@@ -144,7 +144,7 @@ python  <path to file> -- list --start 2021-09-13
 ```
 ###### List all task created upto specific date from start
 ``` 
-python  <path to file> -- list --end 2021-09-18
+python  <path to file> --list --end 2021-09-18
 ```
 * Output
 ```
@@ -164,7 +164,7 @@ python  <path to file> -- list --end 2021-09-18
 
 ###### List all task created between between two dates
 ```
-python  <path to file> -- list --start 2021-09-14 --end 2021-09-18
+python  <path to file> --list --start 2021-09-14 --end 2021-09-18
 ```
 * Output
 ```
@@ -177,4 +177,197 @@ python  <path to file> -- list --start 2021-09-14 --end 2021-09-18
 |   21 | Make github repository      | 2021-09-17 08:56:36 | False        |
 |   22 | Meet clients on site        | 2021-09-18 09:56:36 | False        |
 +------+-----------------------------+---------------------+--------------+
+```
+#### Adding a task 
+```
+python  <path to file> --create Complete Bootcamp
+```
+* Output
+```
+New Title Added
+```
+* Sample table
+```
++----+---------------------+------------------------------+------------+--------------+--------+
+| id | created_at          | title                        | updated_at | completed_at | status |
++----+---------------------+------------------------------+------------+--------------+--------+
+| 15 | 2021-09-11 02:56:36 | Organize party               | NULL       | NULL         |      0 |
+| 16 | 2021-09-12 03:56:36 | Study Data structure         | NULL       | NULL         |      0 |
+| 17 | 2021-09-13 04:56:36 | Complete Interview           | NULL       | NULL         |      0 |
+| 18 | 2021-09-14 05:56:36 | Complete competency meeting  | NULL       | NULL         |      0 |
+| 19 | 2021-09-15 06:56:36 | Make ToDo App                | NULL       | NULL         |      0 |
+| 20 | 2021-09-16 07:56:36 | Complete HTML Assignment     | NULL       | NULL         |      0 |
+| 21 | 2021-09-17 08:56:36 | Make github repository       | NULL       | NULL         |      0 |
+| 22 | 2021-09-18 09:56:36 | Meet clients on site         | NULL       | NULL         |      0 |
+| 23 | 2021-09-19 10:56:36 | Settle Credit card bill      | NULL       | NULL         |      0 |
+| 24 | 2021-09-20 11:56:36 | Pay electricity bill         | NULL       | NULL         |      0 |
+| 25 | 2021-09-20 12:56:36 | Organize meeting with HRSPOC | NULL       | NULL         |      0 |
+| 26 | 2021-09-21 13:56:36 | Check sprint duration        | NULL       | NULL         |      0 |
+| 27 | 2021-09-22 14:56:36 | Revise assessment criteria   | NULL       | NULL         |      0 |
+| 28 | 2021-09-23 15:56:36 | Start course on django       | NULL       | NULL         |      0 |
+| 29 | 2021-10-17 23:29:46 | Complete Bootcamp            | NULL       | NULL         |      0 |
++----+---------------------+------------------------------+------------+--------------+--------+
+```
+
+#### Editing a Title
+```
+python  <path to file> --edit-title -id 29 -title Complete project CLIAPP
+```
+* Output
+```
+Title Updated
+```
+* Sample Table
+```
++----+---------------------+------------------------------+---------------------+--------------+--------+
+| id | created_at          | title                        | updated_at          | completed_at | status |
++----+---------------------+------------------------------+---------------------+--------------+--------+
+| 15 | 2021-09-11 02:56:36 | Organize party               | NULL                | NULL         |      0 |
+| 16 | 2021-09-12 03:56:36 | Study Data structure         | NULL                | NULL         |      0 |
+| 17 | 2021-09-13 04:56:36 | Complete Interview           | NULL                | NULL         |      0 |
+| 18 | 2021-09-14 05:56:36 | Complete competency meeting  | NULL                | NULL         |      0 |
+| 19 | 2021-09-15 06:56:36 | Make ToDo App                | NULL                | NULL         |      0 |
+| 20 | 2021-09-16 07:56:36 | Complete HTML Assignment     | NULL                | NULL         |      0 |
+| 21 | 2021-09-17 08:56:36 | Make github repository       | NULL                | NULL         |      0 |
+| 22 | 2021-09-18 09:56:36 | Meet clients on site         | NULL                | NULL         |      0 |
+| 23 | 2021-09-19 10:56:36 | Settle Credit card bill      | NULL                | NULL         |      0 |
+| 24 | 2021-09-20 11:56:36 | Pay electricity bill         | NULL                | NULL         |      0 |
+| 25 | 2021-09-20 12:56:36 | Organize meeting with HRSPOC | NULL                | NULL         |      0 |
+| 26 | 2021-09-21 13:56:36 | Check sprint duration        | NULL                | NULL         |      0 |
+| 27 | 2021-09-22 14:56:36 | Revise assessment criteria   | NULL                | NULL         |      0 |
+| 28 | 2021-09-23 15:56:36 | Start course on django       | NULL                | NULL         |      0 |
+| 29 | 2021-10-17 23:29:46 | Complete project CLIAPP      | 2021-10-17 23:33:53 | NULL         |      0 |
++----+---------------------+------------------------------+---------------------+--------------+--------+
+```
+
+#### Editing task status to complete or incomplete
+* Lets change alternative task to complete
+```
+python  <path to file> --edit-title -id 16 -iscomplete True
+python  <path to file> --edit-title -id 18 -iscomplete True
+python  <path to file> --edit-title -id 20 -iscomplete True
+python  <path to file> --edit-title -id 22 -iscomplete True
+python  <path to file> --edit-title -id 24 -iscomplete True
+python  <path to file> --edit-title -id 26 -iscomplete True
+python  <path to file> --edit-title -id 28 -iscomplete True
+```
+* Output 
+``` Status Updated```
+* Sample Table
+```
++----+---------------------+------------------------------+---------------------+---------------------+--------+
+| id | created_at          | title                        | updated_at          | completed_at        | status |
++----+---------------------+------------------------------+---------------------+---------------------+--------+
+| 15 | 2021-09-11 02:56:36 | Organize party               | NULL                | NULL                |      0 |
+| 16 | 2021-09-12 03:56:36 | Study Data structure         | 2021-10-18 00:05:29 | 2021-10-18 00:05:29 |      1 |
+| 17 | 2021-09-13 04:56:36 | Complete Interview           | NULL                | NULL                |      0 |
+| 18 | 2021-09-14 05:56:36 | Complete competency meeting  | 2021-10-18 00:06:05 | 2021-10-18 00:06:05 |      1 |
+| 19 | 2021-09-15 06:56:36 | Make ToDo App                | NULL                | NULL                |      0 |
+| 20 | 2021-09-16 07:56:36 | Complete HTML Assignment     | 2021-10-18 00:06:10 | 2021-10-18 00:06:10 |      1 |
+| 21 | 2021-09-17 08:56:36 | Make github repository       | NULL                | NULL                |      0 |
+| 22 | 2021-09-18 09:56:36 | Meet clients on site         | 2021-10-18 00:06:15 | 2021-10-18 00:06:15 |      1 |
+| 23 | 2021-09-19 10:56:36 | Settle Credit card bill      | NULL                | NULL                |      0 |
+| 24 | 2021-09-20 11:56:36 | Pay electricity bill         | 2021-10-18 00:06:21 | 2021-10-18 00:06:21 |      1 |
+| 25 | 2021-09-20 12:56:36 | Organize meeting with HRSPOC | NULL                | NULL                |      0 |
+| 26 | 2021-09-21 13:56:36 | Check sprint duration        | 2021-10-18 00:06:26 | 2021-10-18 00:06:26 |      1 |
+| 27 | 2021-09-22 14:56:36 | Revise assessment criteria   | NULL                | NULL                |      0 |
+| 28 | 2021-09-23 15:56:36 | Start course on django       | 2021-10-18 00:06:59 | 2021-10-18 00:06:59 |      1 |
+| 29 | 2021-10-17 23:29:46 | Complete project CLIAPP      | 2021-10-17 23:33:53 | NULL                |      0 |
++----+---------------------+------------------------------+---------------------+---------------------+--------+
+```
+#### Deleting task (Single or multiple) 
+
+``` python <path to file> --delete 29 ```
+* Output
+```Do you really want to delete [y/n]: y```
+``` Task deleted ```
+* Sample Table
+```
++----+---------------------+------------------------------+---------------------+---------------------+--------+
+| id | created_at          | title                        | updated_at          | completed_at        | status |
++----+---------------------+------------------------------+---------------------+---------------------+--------+
+| 15 | 2021-09-11 02:56:36 | Organize party               | NULL                | NULL                |      0 |
+| 16 | 2021-09-12 03:56:36 | Study Data structure         | 2021-10-18 00:05:29 | 2021-10-18 00:05:29 |      1 |
+| 17 | 2021-09-13 04:56:36 | Complete Interview           | NULL                | NULL                |      0 |
+| 18 | 2021-09-14 05:56:36 | Complete competency meeting  | 2021-10-18 00:06:05 | 2021-10-18 00:06:05 |      1 |
+| 19 | 2021-09-15 06:56:36 | Make ToDo App                | NULL                | NULL                |      0 |
+| 20 | 2021-09-16 07:56:36 | Complete HTML Assignment     | 2021-10-18 00:06:10 | 2021-10-18 00:06:10 |      1 |
+| 21 | 2021-09-17 08:56:36 | Make github repository       | NULL                | NULL                |      0 |
+| 22 | 2021-09-18 09:56:36 | Meet clients on site         | 2021-10-18 00:06:15 | 2021-10-18 00:06:15 |      1 |
+| 23 | 2021-09-19 10:56:36 | Settle Credit card bill      | NULL                | NULL                |      0 |
+| 24 | 2021-09-20 11:56:36 | Pay electricity bill         | 2021-10-18 00:06:21 | 2021-10-18 00:06:21 |      1 |
+| 25 | 2021-09-20 12:56:36 | Organize meeting with HRSPOC | NULL                | NULL                |      0 |
+| 26 | 2021-09-21 13:56:36 | Check sprint duration        | 2021-10-18 00:06:26 | 2021-10-18 00:06:26 |      1 |
+| 27 | 2021-09-22 14:56:36 | Revise assessment criteria   | NULL                | NULL                |      0 |
+| 28 | 2021-09-23 15:56:36 | Start course on django       | 2021-10-18 00:06:59 | 2021-10-18 00:06:59 |      1 |
++----+---------------------+------------------------------+---------------------+---------------------+--------+
+```
+#### Searching task containing word
+``` python <path to file> --search Organize```
+* Output
+```
+Title with matching Pattern are 
++------------------------------+
+| Title                        |
+|------------------------------|
+| Organize party               |
+| Organize meeting with HRSPOC |
++------------------------------+
+```
+
+#### Listing Task with status complete
+``` python <path to file> --list complete ```
+* Output
+```
+Task with Status incomplete
++------+-----------------------------+---------------------+--------------+
+|   Id | Title                       | Created_at          | Iscomplete   |
+|------+-----------------------------+---------------------+--------------|
+|   16 | Study Data structure        | 2021-09-12 03:56:36 | True         |
+|   18 | Complete competency meeting | 2021-09-14 05:56:36 | True         |
+|   20 | Complete HTML Assignment    | 2021-09-16 07:56:36 | True         |
+|   22 | Meet clients on site        | 2021-09-18 09:56:36 | True         |
+|   24 | Pay electricity bill        | 2021-09-20 11:56:36 | True         |
+|   26 | Check sprint duration       | 2021-09-21 13:56:36 | True         |
+|   28 | Start course on django      | 2021-09-23 15:56:36 | True         |
++------+-----------------------------+---------------------+--------------+
+```
+#### Listing Task with status incomplete
+``` python <path to file> --list incomplete ```
+* Output
+```
+Task with Status incomplete
++------+------------------------------+---------------------+--------------+
+|   Id | Title                        | Created_at          | Iscomplete   |
+|------+------------------------------+---------------------+--------------|
+|   15 | Organize party               | 2021-09-11 02:56:36 | False        |
+|   17 | Complete Interview           | 2021-09-13 04:56:36 | False        |
+|   19 | Make ToDo App                | 2021-09-15 06:56:36 | False        |
+|   21 | Make github repository       | 2021-09-17 08:56:36 | False        |
+|   23 | Settle Credit card bill      | 2021-09-19 10:56:36 | False        |
+|   25 | Organize meeting with HRSPOC | 2021-09-20 12:56:36 | False        |
+|   27 | Revise assessment criteria   | 2021-09-22 14:56:36 | False        |
++------+------------------------------+---------------------+--------------+
+```
+#### Final sample table
+
+```
++----+---------------------+------------------------------+---------------------+---------------------+--------+
+| id | created_at          | title                        | updated_at          | completed_at        | status |
++----+---------------------+------------------------------+---------------------+---------------------+--------+
+| 15 | 2021-09-11 02:56:36 | Organize party               | NULL                | NULL                |      0 |
+| 16 | 2021-09-12 03:56:36 | Study Data structure         | 2021-10-18 00:05:29 | 2021-10-18 00:05:29 |      1 |
+| 17 | 2021-09-13 04:56:36 | Complete Interview           | NULL                | NULL                |      0 |
+| 18 | 2021-09-14 05:56:36 | Complete competency meeting  | 2021-10-18 00:06:05 | 2021-10-18 00:06:05 |      1 |
+| 19 | 2021-09-15 06:56:36 | Make ToDo App                | NULL                | NULL                |      0 |
+| 20 | 2021-09-16 07:56:36 | Complete HTML Assignment     | 2021-10-18 00:06:10 | 2021-10-18 00:06:10 |      1 |
+| 21 | 2021-09-17 08:56:36 | Make github repository       | NULL                | NULL                |      0 |
+| 22 | 2021-09-18 09:56:36 | Meet clients on site         | 2021-10-18 00:06:15 | 2021-10-18 00:06:15 |      1 |
+| 23 | 2021-09-19 10:56:36 | Settle Credit card bill      | NULL                | NULL                |      0 |
+| 24 | 2021-09-20 11:56:36 | Pay electricity bill         | 2021-10-18 00:06:21 | 2021-10-18 00:06:21 |      1 |
+| 25 | 2021-09-20 12:56:36 | Organize meeting with HRSPOC | NULL                | NULL                |      0 |
+| 26 | 2021-09-21 13:56:36 | Check sprint duration        | 2021-10-18 00:06:26 | 2021-10-18 00:06:26 |      1 |
+| 27 | 2021-09-22 14:56:36 | Revise assessment criteria   | NULL                | NULL                |      0 |
+| 28 | 2021-09-23 15:56:36 | Start course on django       | 2021-10-18 00:06:59 | 2021-10-18 00:06:59 |      1 |
++----+---------------------+------------------------------+---------------------+---------------------+--------+
 ```
