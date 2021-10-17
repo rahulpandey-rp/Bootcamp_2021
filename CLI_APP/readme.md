@@ -18,13 +18,14 @@ In this app you can add a task, list all the task, update the title, delete any 
 
 * Python3.x
 * Mysql
-* Libraries- 
-            argparse(For extraction of command line argument)
-            sqlalchemy(Orm used to connect mysql database with python)
-            mysql-connnector
-            re(regular expression)
-            Tabulate(to show the data retrieved in table format)
 * Any Operating system(windows, Linux, Macos)
+
+### Libraries- 
+* Argparse(For extraction of command line argument)
+* sqlalchemy(Orm used to connect mysql database with python)
+* mysql-connnector-python
+* re (regular expression)
+* Tabulate(to show the data retrieved in table format)
 
 ### Installing
 * Download the file [link] and run it in your terminal by providing the arguments.
