@@ -34,18 +34,19 @@ Run the script by giving any command below:
 
 #### Showing list of task by different filter
 
-```
+##### T list all the task with their id and creation date.
+* ``` --list ```
+##### To list all the task with their id and creation date where the status of task is complete.
+* ``` --list complete ```
+##### To list all the task with their id and creation date where the status of task is incomplete.
+* ``` --list incomplete ``` 
+##### To list task created between specific date to another date.
+* ```--list start(optional) YYYY-MM-DD end(optional) YYYY-MM-DD  ```
 
-* --list #TO list all the task with their id and creation date.
-* --list complete #To list all the task with their id and creation date where the status of task is complete.
-* --list incomplete  #To list all the task with their id and creation date where the status of task is incomplete.
-* --list start(optional) YYYY-MM-DD end(optional) YYYY-MM-DD  #To list task created between specific date to another date.
-
-```
 
 #### Adding a title in database
 
-* ``` --create (title-name) : It will add a title in the database. ```
+* ``` --create <title-name> ```
 
             
 #### Editing a title in database
@@ -60,6 +61,6 @@ Run the script by giving any command below:
 
 * ``` delete <Taskid> ```
             
-#### Search a title exist by giving a word 
+#### Search a titles containing a word 
 
 * ``` --search <word to search> ```
